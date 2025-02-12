@@ -1,0 +1,1250 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mohd Ali Akbar - Portfolio</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" rel="stylesheet">
+    <style>
+       :root {
+        --primary: #4a90e2;
+        --dark: #121212;
+        --darker: #1a1a1a;
+        --light: #ffffff;
+        --gray: #fefbfb;
+        --text-primary: #ffffff;
+        --text-secondary: #e0e0e0;
+        --text-muted: #bdbdbd;
+    }
+
+    body {
+        background-color: var(--dark);
+        color: var(--text-primary);
+        font-family: 'Segoe UI', sans-serif;
+    }
+
+    .navbar {
+        background-color: rgba(18, 18, 18, 0.95) !important;
+        backdrop-filter: blur(10px);
+    }
+
+    .navbar-brand {
+        color: var(--text-primary) !important;
+        font-weight: 600;
+    }
+
+    .nav-link {
+        color: var(--text-secondary) !important;
+    }
+
+    .nav-link:hover, .nav-link.active {
+        color: var(--primary) !important;
+    }
+    li,small{
+        color: #fefbfb;
+    }
+
+    .hero-section {
+        min-height: 100vh;
+        background: linear-gradient(45deg, var(--darker), var(--dark));
+        position: relative;
+        overflow: hidden;
+        top: 50px;
+    }
+
+    .hero-section h1 {
+        color: var(--text-primary);
+        text-shadow: 0 2px 4px rgba(0,0,0,0.2);
+    }
+
+    .hero-section .lead {
+        color: var(--text-secondary);
+    }
+
+    .hero-section::before {
+        content: '';
+        position: absolute;
+        width: 200%;
+        height: 200%;
+        background: radial-gradient(circle, var(--primary) 0%, transparent 70%);
+        opacity: 0.1;
+        animation: rotate 20s linear infinite;
+    }
+
+    @keyframes rotate {
+        from { transform: rotate(0deg); }
+        to { transform: rotate(360deg); }
+    }
+
+    .section {
+        padding: 100px 0;
+        background-color: var(--darker);
+    }
+
+    .section:nth-child(odd) {
+        background-color: var(--dark);
+    }
+
+    .section h2 {
+        color: var(--text-primary);
+        font-weight: 600;
+    }
+
+    .card {
+        background-color: var(--darker);
+        border: 1px solid rgba(255, 255, 255, 0.1);
+        transition: transform 0.3s ease;
+    }
+
+    .card-title {
+        color: var(--text-primary);
+        font-weight: 600;
+    }
+
+    .card-text {
+        color: var(--text-secondary);
+    }
+
+    .card:hover {
+        transform: translateY(-5px);
+    }
+
+    .skill-pill {
+        background-color: var(--primary);
+        color: var(--text-primary);
+        padding: 5px 15px;
+        border-radius: 20px;
+        margin: 5px;
+        display: inline-block;
+        font-size: 0.9rem;
+        font-weight: 500;
+    }
+
+    .timeline-item {
+        position: relative;
+        padding-left: 30px;
+        margin-bottom: 30px;
+    }
+
+    .timeline-item h4 {
+        color: var(--text-primary);
+        font-weight: 600;
+    }
+
+    .timeline-item h6 {
+        color: var(--text-secondary);
+    }
+
+    .timeline-item p {
+        color: var(--text-muted);
+    }
+
+    .timeline-item::before {
+        content: '';
+        position: absolute;
+        left: 0;
+        top: 0;
+        height: 100%;
+        width: 2px;
+        background-color: var(--primary);
+    }
+
+    .timeline-item::after {
+        content: '';
+        position: absolute;
+        left: -4px;
+        top: 0;
+        width: 10px;
+        height: 10px;
+        border-radius: 50%;
+        background-color: var(--primary);
+    }
+
+    .social-icon {
+        color: var(--text-secondary);
+        font-size: 1.5rem;
+        margin: 0 10px;
+        transition: color 0.3s ease;
+    }
+
+    .social-icon:hover {
+        color: var(--primary);
+    }
+
+    .progress {
+        height: 8px;
+        background-color: var(--dark);
+    }
+
+    .progress-bar {
+        background-color: var(--primary);
+    }
+
+    .lead {
+        color: var(--text-secondary);
+        font-weight: 300;
+    }
+
+    .badge {
+        font-weight: 500;
+    }
+
+    .text-muted {
+        color: var(--text-muted) !important;
+    }
+
+    h4, h5, h6 {
+        color: var(--text-primary);
+    }
+
+    p {
+        color: var(--text-secondary);
+        line-height: 1.6;
+    }
+
+    .btn-primary {
+        background-color: var(--primary);
+        border-color: var(--primary);
+        font-weight: 500;
+    }
+
+    .btn-primary:hover {
+        background-color: #357abd;
+        border-color: #357abd;
+    }
+
+    .certificates-section {
+    padding: 80px 0;
+    background-color: #0b0b0b !important;
+  }
+
+  .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 15px;
+  }
+
+  .section-title {
+    text-align: center;
+    margin-bottom: 50px;
+    font-size: 2.5rem;
+    color: #f7f6f6;
+    font-weight: bold;
+  }
+
+  .certificates-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    padding: 20px;
+  }
+
+  .certificate-card {
+    background: rgb(74, 74, 74);
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    transition: transform 0.3s ease;
+  }
+
+  .certificate-card:hover {
+    transform: translateY(-5px);
+  }
+
+  .certificate-image-container {
+    position: relative;
+    height: 200px;
+    overflow: hidden;
+  }
+
+  .certificate-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .certificate-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+  }
+
+  .certificate-card:hover .certificate-overlay {
+    opacity: 1;
+  }
+
+  .view-certificate-btn {
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    transition: background-color 0.3s ease;
+  }
+
+  .view-certificate-btn:hover {
+    background-color: #0056b3;
+  }
+
+  .certificate-details {
+    padding: 20px;
+  }
+
+  .certificate-title {
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: #faf7f7;
+    margin-bottom: 10px;
+  }
+
+  .certificate-info {
+    display: flex;
+    justify-content: space-between;
+    color: #fefcfc;
+    font-size: 0.9rem;
+  }
+
+  @media (max-width: 768px) {
+    .certificates-grid {
+      grid-template-columns: 1fr;
+    }
+    
+    .section-title {
+      font-size: 2rem;
+    }
+  }
+    </style>
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="#home">MAA</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="#home">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#skills">Skills</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#experience">Experience</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#projects">Projects</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#certificates">Certificates</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero-section d-flex align-items-center">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-6" data-aos="fade-right">
+                    <h1 class="display-4 fw-bold mb-4">Hi, I'm Mohd Ali Akbar</h1>
+                    <h2 class="h4 text-primary mb-4">Developer(MEAN) & Data Analyst</h2>
+                    <p class="lead mb-4"> Transforming data into actionable insights and building modern web applications is not just a skill; it's an art. As a data scientist, I delve deep into the ocean of data, uncovering patterns and trends that drive informed decision-making. With the analytical mindset of a data analyst, I turn raw numbers into compelling narratives, ensuring that every insight is not only understood but also actionable. </p> <p class="lead mb-4"> As a MEAN stack developer, I harness the power of MongoDB, Express.js, Angular, and Node.js to create dynamic, responsive web applications that meet the needs of users in real-time. In the words of Albert Einstein, "Information is not knowledge." My goal is to transform information into knowledge, and knowledge into wisdom through innovative technology solutions. </p> <p class="lead mb-4"> "Data is the new oil," they say, and I strive to refine this oil into valuable insights that fuel business growth. As the Chinese proverb goes, "A journey of a thousand miles begins with a single step." Each line of code I write and every dataset I analyze is a step toward creating impactful solutions that empower organizations to thrive in a data-driven world. </p> 
+                    <a href="#contact" class="btn btn-primary btn-lg  " style="margin-bottom: 10px;">Get In Touch</a>
+                </div>
+                <div class="col-lg-6" data-aos="fade-left">
+                    <img src="ali.jpeg" alt="Hero Image" class="img-fluid rounded-3">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="section">
+        <div class="container">
+            <h2 class="text-center mb-5" data-aos="fade-up">About Me</h2>
+            <div class="row">
+                <div class="col-lg-6" data-aos="fade-right">
+                    <p class="lead">A skilled Data Analyst with 3+ years of experience in transforming data into actionable insights, complemented by 1 year in Angular-based Web Development and 4 years in document management.</p>
+                    <p>Proficient in Python, Power BI, SQL, and Excel, I excel in data processing, visualization, and creating insightful reports to support business goals. I am skilled in using libraries such as Pandas, NumPy, Matplotlib, Seaborn, Scikit-learn, TensorFlow, and PyTorch for data analysis and machine learning. Additionally, I have experience with the MEAN stack, including Express.js, Angular, and MongoDB, enabling me to build dynamic web applications. Passionate about enabling data-driven decisions and delivering impactful solutions for organizational success.</p>
+                </div>
+                <div class="col-lg-6" data-aos="fade-left">
+                    <div class="card">
+                        <div class="card-body">
+                            <h5 class="card-title">Education</h5>
+                            <div class="timeline-item">
+                                <h6>Master of Computer Applications (MCA)</h6>
+                                <p>Lovely Professional University, Punjab, India</p>
+                                <small>2013 - 2015</small>
+                            </div>
+                            <div class="timeline-item">
+                                <h6>Bachelor of Computer Applications (BCA)</h6>
+                                <p>University of Allahabad, Prayagraj, India</p>
+                                <small>2010 - 2013</small>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills" class="section">
+        <div class="container">
+            <h2 class="text-center mb-5" data-aos="fade-up">Technical Skills</h2>
+            <div class="row g-4">
+                <div class="col-md-6" data-aos="fade-right">
+                    <h4>Programming Languages</h4>
+                    <div class="mb-3">
+                        <div class="d-flex justify-content-between mb-1">
+                            <span>Python</span>
+                            <span>90%</span>
+                        </div>
+                        <div class="progress">
+                            <div class="progress-bar" style="width: 90%"></div>
+                        </div>
+                    </div>
+                    <div class="mb-3">
+                        <div class="d-flex justify-content-between mb-1">
+                            <span>JavaScript</span>
+                            <span>85%</span>
+                        </div>
+                        <div class="progress">
+                            <div class="progress-bar" style="width: 85%"></div>
+                        </div>
+                    </div>
+                    <div class="mb-3">
+                        <div class="d-flex justify-content-between mb-1">
+                            <span>SQL</span>
+                            <span>88%</span>
+                        </div>
+                        <div class="progress">
+                            <div class="progress-bar" style="width: 88%"></div>
+                        </div>
+                    </div>
+                    <div class="mb-3">
+                        <div class="d-flex justify-content-between mb-1">
+                            <span>Type Script</span>
+                            <span>78%</span>
+                        </div>
+                        <div class="progress">
+                            <div class="progress-bar" style="width: 88%"></div>
+                        </div>
+                    </div>
+                    <div class="mb-3">
+                        <div class="d-flex justify-content-between mb-1">
+                            <span>HTML</span>
+                            <span>80%</span>
+                        </div>
+                        <div class="progress">
+                            <div class="progress-bar" style="width: 88%"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6" data-aos="fade-left">
+                    <h4>Databases</h4>
+                    <div class="mb-3">
+                        <div class="d-flex justify-content-between mb-1">
+                            <span>MongoDB</span>
+                            <span>75%</span>
+                        </div>
+                        <div class="progress">
+                            <div class="progress-bar" style="width: 75%"></div>
+                        </div>
+                    </div>
+                    <div class="mb-3">
+                        <div class="d-flex justify-content-between mb-1">
+                            <span>MySQL</span>
+                            <span>70%</span>
+                        </div>
+                        <div class="progress">
+                            <div class="progress-bar" style="width: 70%"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row g-4 mt-4">
+                <div class="col-md-6" data-aos="fade-right">
+                    <h4>Tools & Technologies</h4>
+                    <div class="mb-3">
+                        <div class="d-flex justify-content-between mb-1">
+                            <span>Power BI</span>
+                            <span>80%</span>
+                        </div>
+                        <div class="progress">
+                            <div class="progress-bar" style="width: 80%"></div>
+                        </div>
+                    </div>
+                    <div class="mb-3">
+                        <div class="d-flex justify-content-between mb-1">
+                            <span>Angular</span>
+                            <span>75%</span>
+                        </div>
+                        <div class="progress">
+                            <div class="progress-bar" style="width: 75%"></div>
+                        </div>
+                    </div>
+                    <div class="mb-3">
+                        <div class="d-flex justify-content-between mb-1">
+                            <span>Git</span>
+                            <span>85%</span>
+                        </div>
+                        <div class="progress">
+                            <div class="progress-bar" style="width: 85%"></div>
+                        </div>
+                    </div>
+                    <div class="mb-3">
+                        <div class="d-flex justify-content-between mb-1">
+                            <span>Node.js</span>
+                            <span>80%</span>
+                        </div>
+                        <div class="progress">
+                            <div class="progress-bar" style="width: 80%"></div>
+                        </div>
+                    </div>
+                    <div class="mb-3">
+                        <div class="d-flex justify-content-between mb-1">
+                            <span>Excel</span>
+                            <span>90%</span>
+                        </div>
+                        <div class="progress">
+                            <div class="progress-bar" style="width: 90%"></div>
+                        </div>
+                    </div>
+                   
+                    <div class="mb-3">
+                        <div class="d-flex justify-content-between mb-1">
+                            <span>Pandas</span>
+                            <span>85%</span>
+                        </div>
+                        <div class="progress">
+                            <div class="progress-bar" style="width: 85%"></div>
+                        </div>
+                    </div>
+                    <div class="col-md-6" data-aos="fade-left"></div>
+                    <div class="mb-3">
+                        <div class="d-flex justify-content-between mb-1">
+                            <span>NumPy</span>
+                            <span>80%</span>
+                        </div>
+                        <div class="progress">
+                            <div class="progress-bar" style="width: 80%"></div>
+                        </div>
+                    </div>
+                    <div class="mb-3">
+                        <div class="d-flex justify-content-between mb-1">
+                            <span>Matplotlib</span>
+                            <span>75%</span>
+                        </div>
+                        <div class="progress">
+                            <div class="progress-bar" style="width: 75%"></div>
+                        </div>
+                    </div>
+                    <div class="mb-3">
+                        <div class="d-flex justify-content-between mb-1">
+                            <span>Seaborn</span>
+                            <span>70%</span>
+                        </div>
+                        <div class="progress">
+                            <div class="progress-bar" style="width: 70%"></div>
+                        </div>
+                    </div>
+                    <div class="mb-3">
+                        <div class="d-flex justify-content-between mb-1">
+                            <span>Scikit-learn</span>
+                            <span>80%</span>
+                        </div>
+                        <div class="progress">
+                            <div class="progress-bar" style="width: 80%"></div>
+                        </div>
+                    </div>
+                  
+                    <div class="mb-3">
+                        <div class="d-flex justify-content-between mb-1">
+                            <span>PyTorch</span>
+                            <span>70%</span>
+                        </div>
+                        <div class="progress">
+                            <div class="progress-bar" style="width: 70%"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Experience Section -->
+    <section id="experience" class="section">
+        <div class="container">
+            <h2 class="text-center mb-5" data-aos="fade-up">Professional Experience</h2>
+            <div class="timeline">
+                <div class="timeline-item" data-aos="fade-up">
+                    <h4>Web Developer</h4>
+                    <h6>Western International Group, Bengaluru</h6>
+                    <p class="text-muted">Apr 2024 - Present</p>
+                    <p>Developed data-driven web applications using Angular with integrated data visualization components.</p>
+                    <ul>
+                        <li>Performed advanced data analysis and created interactive dashboards to represent complex business insights.</li>
+                        <li>Utilized statistical techniques to analyze application performance metrics and user engagement data.</li>
+                        <li>Implemented machine learning models to predict user behavior and application performance trends.</li>
+                        <li>Optimized data processing workflows, reducing data retrieval and rendering times by 35%.</li>
+                        <li>Collaborated with data science teams to translate analytical requirements into technical implementations.</li>
+                    </ul>
+                </div>
+                <div class="timeline-item" data-aos="fade-up">
+                    <h4>Angular Developer</h4>
+                    <h6>Utah Tech Labs, India</h6>
+                    <p class="text-muted">Nov 2023 - Feb 2024</p>
+                    <p>Developed interactive user interfaces using Angular and TypeScript, improving usability by 30%.</p>
+                    <ul>
+                        <li>Integrated third-party APIs to fetch and process real-time data.</li>
+                        <li>Utilized Angular’s reactive forms for dynamic data validation and submission.</li>
+                        <li>Designed reusable components to streamline front-end development.</li>
+                        <li>Implemented CI/CD pipelines for automated build and deployment processes.</li>
+                        <li>Conducted performance tuning to minimize loading times and optimize application scalability.</li>
+                    </ul>
+                </div>
+                <div class="timeline-item" data-aos="fade-up">
+                    <h4>Data Analyst</h4>
+                    <h6>Future Tech Data, India</h6>
+                    <p class="text-muted">Jun 2022 - Oct 2023</p>
+                    <p>Automated data cleaning and transformation processes using Python and SQL, reducing analysis time by 25%.</p>
+                    <ul>
+                        <li>Designed Power BI dashboards to visualize KPIs and operational metrics, improving decision-making efficiency.</li>
+                        <li>Optimized SQL queries for large-scale data extraction and transformation.</li>
+                        <li>Managed ETL pipelines to ensure seamless data flow between systems.</li>
+                        <li>Implemented anomaly detection models for predictive analytics using Python.</li>
+                        <li>Provided actionable insights to stakeholders, leading to a 20% increase in operational efficiency.</li>
+                    </ul>
+                </div>
+                <div class="timeline-item" data-aos="fade-up">
+                    <h4>Senior Executive</h4>
+                    <h6>PowerPoint Marketing Pvt. Ltd, Pune, India</h6>
+                    <p class="text-muted">Apr 2018 - Dec 2021</p>
+                    <p>Analyzed sales and logistics data to optimize supply chain operations, reducing costs by 15%.</p>
+                    <ul>
+                        <li>Created custom reports using advanced Excel functionalities (VBA, Pivot Tables).</li>
+                        <li>Developed process improvement strategies based on data-driven insights.</li>
+                        <li>Conducted market analysis to identify emerging trends and opportunities.</li>
+                        <li>Collaborated with cross-departmental teams to implement digital transformation initiatives.</li>
+                    </ul>
+                </div>
+                <div class="timeline-item" data-aos="fade-up">
+                    <h4>Document Controller</h4>
+                    <h6>GSA Cargo Services, Pune, India</h6>
+                    <p class="text-muted">Dec 2015 - Jan 2018</p>
+                    <p>Managed and maintained shipment documentation, ensuring compliance with international standards.</p>
+                    <ul>
+                        <li>Utilized data tracking tools to improve accuracy and reduce processing times.</li>
+                        <li>Designed an internal tracking system to monitor shipment schedules.</li>
+                        <li>Prepared detailed analytical reports for logistics planning and execution.</li>
+                        <li>Streamlined document workflows, achieving a 20% increase in productivity.</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="section">
+        <div class="container">
+            <h2 class="text-center mb-5" data-aos="fade-up">Featured Projects</h2>
+            
+            <!-- Full Stack Projects -->
+            <h3 class="mb-4" data-aos="fade-up">Full Stack Applications</h3>
+            <div class="row g-4 mb-5">
+                <div class="col-md-6" data-aos="fade-up">
+                    <div class="card h-100">
+                        <div class="card-body">
+                            <h5 class="card-title">New Towers Trading Website</h5>
+                            <p class="card-text">A comprehensive e-commerce platform built with Angular, showcasing various brands and products.</p>
+                            <div class="mb-3">
+                                <small class="text-muted">Key Features:</small>
+                                <ul class="mt-2">
+                                    <li>Responsive brand sections with detailed product information</li>
+                                    <li>Custom CSS styling matching brand guidelines</li>
+                                    <li>Cross-device compatibility and optimization</li>
+                                </ul>
+                            </div>
+                            <div class="d-flex gap-2 flex-wrap">
+                                <span class="badge bg-primary">Angular</span>
+                                <span class="badge bg-primary">TypeScript</span>
+                                <span class="badge bg-primary">CSS3</span>
+                                <span class="badge bg-primary">Responsive Design</span>
+                            </div>
+                            <div class="mt-3">
+                                <a href="https://newtowerstrading.com/home" target="_blank" class="btn btn-outline-primary btn-sm">Visit Website</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6" data-aos="fade-up">
+                    <div class="card h-100">
+                        <div class="card-body">
+                            <h5 class="card-title">Asset Mangement System</h5>
+                            <p class="card-text">A comprehensive e-commerce platform built with Angular, showcasing various brands and products.</p>
+                            <div class="mb-3">
+                                <small class="text-muted">Key Features:</small>
+                                <ul class="mt-2">
+                                    <li>Responsive brand sections with detailed product information</li>
+                                    <li>Custom CSS styling matching brand guidelines</li>
+                                    <li>Cross-device compatibility and optimization</li>
+                                </ul>
+                            </div>
+                            <div class="d-flex gap-2 flex-wrap">
+                                <span class="badge bg-primary">Angular</span>
+                                <span class="badge bg-primary">Node JS</span>
+                                <span class="badge bg-primary">ExpressJS</span>
+                                <span class="badge bg-primary">MySQL</span>
+                            </div>
+                            <div class="mt-3">
+                                <a href="https://asset.hyperwafa.com/" target="_blank" class="btn btn-outline-primary btn-sm">Visit Website</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6" data-aos="fade-up">
+                    <div class="card h-100">
+                        <div class="card-body">
+                            <h5 class="card-title">HyperWafa Prebooking System</h5>
+                            <p class="card-text">Full-stack prebooking and delivery management system with comprehensive admin features.</p>
+                            <div class="mb-3">
+                                <small class="text-muted">Key Features:</small>
+                                <ul class="mt-2">
+                                    <li>User authentication and role-based access control</li>
+                                    <li>Real-time sales dashboard with visualizations</li>
+                                    <li>Complete delivery management system</li>
+                                    <li>Product and inventory management</li>
+                                </ul>
+                            </div>
+                            <div class="d-flex gap-2 flex-wrap">
+                                <span class="badge bg-primary">Angular</span>
+                                <span class="badge bg-primary">Node.js</span>
+                                <span class="badge bg-primary">Express</span>
+                                <span class="badge bg-primary">MySQL</span>
+                            </div>
+                            <div class="mt-3">
+                                <a href="https://prebooking.hyperwafa.com" target="_blank" class="btn btn-outline-primary btn-sm">Visit Website</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Data Analysis Projects -->
+            <h3 class="mb-4" data-aos="fade-up">Data Analysis Projects</h3>
+            <div class="row g-4 mb-5">
+                <div class="col-md-6" data-aos="fade-up">
+                    <div class="card h-100">
+                        <div class="card-body">
+                            <h5 class="card-title">E-commerce Sales Performance Analysis</h5>
+                            <p class="card-text">Comprehensive sales analysis system with predictive modeling for Nesto Group KSA.</p>
+                            <div class="mb-3">
+                                <small class="text-muted">Key Achievements:</small>
+                                <ul class="mt-2">
+                                    <li>85% accuracy in sales forecasting</li>
+                                    <li>Interactive Power BI dashboard</li>
+                                    <li>Advanced SQL query optimization</li>
+                                </ul>
+                            </div>
+                            <div class="d-flex gap-2 flex-wrap">
+                                <span class="badge bg-primary">Python</span>
+                                <span class="badge bg-primary">MySQL</span>
+                                <span class="badge bg-primary">Power BI</span>
+                                <span class="badge bg-primary">Machine Learning</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-md-6" data-aos="fade-up">
+                    <div class="card h-100">
+                        <div class="card-body">
+                            <h5 class="card-title">Supply Chain Optimization Project</h5>
+                            <p class="card-text">End-to-end supply chain analysis and optimization solution for Nesto Group KSA.</p>
+                            <div class="mb-3">
+                                <small class="text-muted">Key Features:</small>
+                                <ul class="mt-2">
+                                    <li>Automated data pipeline</li>
+                                    <li>Real-time anomaly detection</li>
+                                    <li>Executive dashboard for KPIs</li>
+                                </ul>
+                            </div>
+                            <div class="d-flex gap-2 flex-wrap">
+                                <span class="badge bg-primary">Python</span>
+                                <span class="badge bg-primary">MySQL</span>
+                                <span class="badge bg-primary">Power BI</span>
+                                <span class="badge bg-primary">ETL</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+          
+                    <div class="col-md-6" data-aos="fade-up">
+                        <div class="card h-100">
+                            <div class="card-body">
+                                <h5 class="card-title">Faridia Hospital Management Dashboard</h5>
+                                <p class="card-text">Comprehensive healthcare analytics dashboard focusing on patient retention and segmentation.</p>
+                                <div class="mb-3">
+                                    <small class="text-muted">Key Achievements:</small>
+                                    <ul class="mt-2">
+                                        <li>40% reduction in manual data workload through automation</li>
+                                        <li>85% accuracy in patient churn prediction models</li>
+                                        <li>Interactive demographic and treatment pattern analysis</li>
+                                        <li>Enhanced operational efficiency through data integration</li>
+                                    </ul>
+                                </div>
+                                <div class="d-flex gap-2 flex-wrap">
+                                    <span class="badge bg-primary">Power BI</span>
+                                    <span class="badge bg-primary">SQL Server</span>
+                                    <span class="badge bg-primary">Predictive Modeling</span>
+                                    <span class="badge bg-primary">Healthcare Analytics</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-md-6" data-aos="fade-up">
+                        <div class="card h-100">
+                            <div class="card-body">
+                                <h5 class="card-title">Good United: Web-Driven Donation Platform</h5>
+                                <p class="card-text">A comprehensive donation management system built for United Hope Tech.</p>
+                                <div class="mb-3">
+                                    <small class="text-muted">Key Features:</small>
+                                    <ul class="mt-2">
+                                        <li>Real-time donation tracking dashboard</li>
+                                        <li>Secure document management system</li>
+                                        <li>Responsive donor engagement interface</li>
+                                        <li>Comprehensive donation flow tracking</li>
+                                    </ul>
+                                </div>
+                                <div class="d-flex gap-2 flex-wrap">
+                                    <span class="badge bg-primary">Angular</span>
+                                    <span class="badge bg-primary">Cloud Storage APIs</span>
+                                    <span class="badge bg-primary">Real-time Analytics</span>
+                                    <span class="badge bg-primary">Responsive Design</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+            </div>
+
+            <!-- Design Projects -->
+            <h3 class="mb-4" data-aos="fade-up">Design Projects</h3>
+            <div class="row g-4">
+                <div class="col-md-6" data-aos="fade-up">
+                    <div class="card h-100">
+                        <div class="card-body">
+                            <h5 class="card-title">Price Flyer Template Design</h5>
+                            <p class="card-text">Custom-designed price flyer templates following brand guidelines and user requirements.</p>
+                            <div class="mb-3">
+                                <small class="text-muted">Key Deliverables:</small>
+                                <ul class="mt-2">
+                                    <li>Multiple template variations</li>
+                                    <li>Responsive design across devices</li>
+                                    <li>Brand-compliant typography and colors</li>
+                                </ul>
+                            </div>
+                            <div class="d-flex gap-2 flex-wrap">
+                                <span class="badge bg-primary">UI Design</span>
+                                <span class="badge bg-primary">Typography</span>
+                                <span class="badge bg-primary">Brand Guidelines</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- certification -->
+      <section id="certificates" class="certificates-section">
+        <div class="container">
+          <h2 class="section-title" data-aos="fade-up">Professional Certificates</h2>
+          
+          <div class="certificates-grid">
+            <!-- Certificate 1 -->
+            <div class="certificate-card" data-aos="fade-up">
+              <div class="certificate-image-container">
+                <img src="python-for-data-science.png" alt="Data Science Certificate" class="certificate-image">
+                <div class="certificate-overlay">
+                  <a href="https://www.credly.com/badges/9f623b5c-9107-40fc-94a2-8450a3743e53/print" class="view-certificate-btn" target="_blank">
+                    View Certificate
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                      <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
+                      <polyline points="15 3 21 3 21 9"></polyline>
+                      <line x1="10" y1="14" x2="21" y2="3"></line>
+                    </svg>
+                  </a>
+                </div>
+              </div>
+              <div class="certificate-details">
+                <h3 class="certificate-title">Python for Data Science</h3>
+                <div class="certificate-info">
+                  <span>IBM</span>
+                  <span>2025</span>
+                </div>
+              </div>
+            </div>
+      
+            <!-- Certificate 2 -->
+            <div class="certificate-card" data-aos="fade-up" data-aos-delay="100">
+              <div class="certificate-image-container">
+                <img src="cisco data analyst.jpg" alt="Angular Development Certificate" class="certificate-image">
+                <div class="certificate-overlay">
+                  <a href="https://www.credly.com/badges/6db3cc85-788f-45f2-8524-5ae16b4b4b00" class="view-certificate-btn" target="_blank">
+                    View Certificate
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                      <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
+                      <polyline points="15 3 21 3 21 9"></polyline>
+                      <line x1="10" y1="14" x2="21" y2="3"></line>
+                    </svg>
+                  </a>
+                </div>
+              </div>
+              <div class="certificate-details">
+                <h3 class="certificate-title">Data Analytics Essentials</h3>
+                <div class="certificate-info">
+                  <span>CISCO</span>
+                  <span>2025</span>
+                </div>
+              </div>
+            </div>
+      
+            <!-- Certificate 3 -->
+            <div class="certificate-card" data-aos="fade-up" data-aos-delay="200">
+              <div class="certificate-image-container">
+                <img src="Screenshot 2025-01-23 150700.png" alt="Machine Learning Certificate" class="certificate-image">
+                <div class="certificate-overlay">
+                  <a href="https://www.life-global.org/certificate/8adc6cb7-87c9-4b43-b907-999bcd4d1c15" class="view-certificate-btn" target="_blank">
+                    View Certificate
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                      <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
+                      <polyline points="15 3 21 3 21 9"></polyline>
+                      <line x1="10" y1="14" x2="21" y2="3"></line>
+                    </svg>
+                  </a>
+                </div>
+              </div>
+              <div class="certificate-details">
+                <h3 class="certificate-title">Data Science & Analytics</h3>
+                <div class="certificate-info">
+                  <span>HP</span>
+                  <span>2025</span>
+                </div>
+              </div>
+            </div>
+      
+            <!-- Certificate 4 -->
+            <div class="certificate-card" data-aos="fade-up" data-aos-delay="300">
+              <div class="certificate-image-container">
+                <img src="Screenshot 2025-01-20 152456.png" alt="Power BI Certificate" class="certificate-image">
+                <div class="certificate-overlay">
+                  <a href="https://courses.cognitiveclass.ai/certificates/b58b3cec49e34a1e8194db51f135ad10#" class="view-certificate-btn" target="_blank">
+                    View Certificate
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                      <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
+                      <polyline points="15 3 21 3 21 9"></polyline>
+                      <line x1="10" y1="14" x2="21" y2="3"></line>
+                    </svg>
+                  </a>
+                </div>
+              </div>
+              <div class="certificate-details">
+                <h3 class="certificate-title">Data Science 101
+                    (DS0101EN, provided by IBM)</h3>
+                <div class="certificate-info">
+                  <span>Cognitive Class</span>
+                  <span>2025</span>
+                </div>
+              </div>
+            </div>
+                        <!-- Certificate 5 -->
+                        <div class="certificate-card" data-aos="fade-up" data-aos-delay="300">
+                            <div class="certificate-image-container">
+                              <img src="udemy data-science.jpg" alt="Power BI Certificate" class="certificate-image">
+                              <div class="certificate-overlay">
+                                <a href="https://www.udemy.com/certificate/UC-c79aaa4a-115a-4ec9-9c42-ee303776929c/" class="view-certificate-btn" target="_blank">
+                                  View Certificate
+                                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
+                                    <polyline points="15 3 21 3 21 9"></polyline>
+                                    <line x1="10" y1="14" x2="21" y2="3"></line>
+                                  </svg>
+                                </a>
+                              </div>
+                            </div>
+                            <div class="certificate-details">
+                              <h3 class="certificate-title">Master in Data Science, Data Analytics and Data Analysis</h3>
+                              <div class="certificate-info">
+                                <span>Udemy</span>
+                                <span>2024</span>
+                              </div>
+                            </div>
+                          </div>
+
+                                      <!-- Certificate 6 -->
+            <div class="certificate-card" data-aos="fade-up" data-aos-delay="300">
+                <div class="certificate-image-container">
+                  <img src="top-mentor.poWerBI.png" alt="Power BI Certificate" class="certificate-image">
+                  <div class="certificate-overlay">
+                    <a href="https://verified.sertifier.com/en/verify/28641739115391/" class="view-certificate-btn" target="_blank">
+                      View Certificate
+                      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
+                        <polyline points="15 3 21 3 21 9"></polyline>
+                        <line x1="10" y1="14" x2="21" y2="3"></line>
+                      </svg>
+                    </a>
+                  </div>
+                </div>
+                <div class="certificate-details">
+                  <h3 class="certificate-title">Power BI</h3>
+                  <div class="certificate-info">
+                    <span>Top Mentor</span>
+                    <span>2024</span>
+                  </div>
+                </div>
+              </div>
+
+                                                    <!-- Certificate 7 -->
+            <div class="certificate-card" data-aos="fade-up" data-aos-delay="300">
+                <div class="certificate-image-container">
+                  <img src="Mohd Ali Akbar_AI_APPRECIATE_CERTIFICATE.png" alt="Power BI Certificate" class="certificate-image">
+                  <div class="certificate-overlay">
+                    <a href="https://ai-for-all.in/#/badge?id=U2FsdGVkX1p1L2u3S9JcbztfnYf8nVRprJu3WFJ8c6v8ha8yP0FqRgy9yDVOeCwewApDBl" class="view-certificate-btn" target="_blank">
+                      View Certificate
+                      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
+                        <polyline points="15 3 21 3 21 9"></polyline>
+                        <line x1="10" y1="14" x2="21" y2="3"></line>
+                      </svg>
+                    </a>
+                  </div>
+                </div>
+                <div class="certificate-details">
+                  <h3 class="certificate-title">
+                    AI Aware Program from Intel, Digital India, and CBSE</h3>
+                  <div class="certificate-info">
+                    <span>Intel, Digital India, and CBSE</span>
+                    <span>2025</span>
+                  </div>
+                </div>
+              </div>
+
+                                                    <!-- Certificate 8 -->
+            <div class="certificate-card" data-aos="fade-up" data-aos-delay="300">
+                <div class="certificate-image-container">
+                  <img src="Screenshot 2025-01-16 113109.png" alt="Power BI Certificate" class="certificate-image">
+                  <div class="certificate-overlay">
+                    <a href="https://learn.saylor.org/pluginfile.php/1/tool_certificate/issues/1737007019/1423890484MA.pdf" class="view-certificate-btn" target="_blank">
+                      View Certificate
+                      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
+                        <polyline points="15 3 21 3 21 9"></polyline>
+                        <line x1="10" y1="14" x2="21" y2="3"></line>
+                      </svg>
+                    </a>
+                  </div>
+                </div>
+                <div class="certificate-details">
+                  <h3 class="certificate-title">CS250: Python for Data Science</h3>
+                  <div class="certificate-info">
+                    <span>Saylor Academy</span>
+                    <span>2025</span>
+                  </div>
+                </div>
+              </div>
+
+                                                    <!-- Certificate 9 -->
+            <div class="certificate-card" data-aos="fade-up" data-aos-delay="300">
+                <div class="certificate-image-container">
+                  <img src="Screenshot 2025-02-11 124846.png" alt="Power BI Certificate" class="certificate-image">
+                  <div class="certificate-overlay">
+                    <a href="https://certificationcompletion.blob.core.windows.net/certifications/PowerBIBeginnertoProWorkshop-AliAkbar" class="view-certificate-btn" target="_blank">
+                      View Certificate
+                      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
+                        <polyline points="15 3 21 3 21 9"></polyline>
+                        <line x1="10" y1="14" x2="21" y2="3"></line>
+                      </svg>
+                    </a>
+                  </div>
+                </div>
+                <div class="certificate-details">
+                  <h3 class="certificate-title">
+                    Power BI Beginner to Pro</h3>
+                  <div class="certificate-info">
+                    <span>Pragmatic Works</span>
+                    <span>2024</span>
+                  </div>
+                </div>
+              </div>
+          </div>
+        </div>
+      </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="section">
+        <div class="container">
+            <h2 class="text-center mb-5" data-aos="fade-up">Get In Touch</h2>
+            <div class="row justify-content-center">
+                <div class="col-lg-6 text-center">
+                    <p class="lead mb-4">Feel free to reach out for collaborations or just a friendly hello</p>
+                    <div class="mb-4">
+                        <a href="mailto:mohdaliakbar31@gmail.com" class="text-decoration-none text-light">
+                            <i class="fas fa-envelope me-2"></i>mohdaliakbar31@gmail.com
+                        </a>
+                    </div>
+                    <div class="mb-4">
+                        <a href="tel:+918299242414" class="text-decoration-none text-light">
+                            <i class="fas fa-phone me-2"></i>+91 8299242414
+                        </a>
+                    </div>
+                    <div class="social-links">
+                        <a href="https://www.linkedin.com/in/mohd-ali-akbar" class="social-icon" target="_blank">
+                            <i class="fab fa-linkedin"></i>
+                        </a>
+                        <a href="#" class="social-icon" target="_blank">
+                            <i class="fab fa-github"></i>
+                        </a>
+                        <a href="#" class="social-icon" target="_blank">
+                            <i class="fab fa-twitter"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+    <script>
+        // Initialize AOS (Animate On Scroll)
+        AOS.init({
+            duration: 1000,
+            once: true,
+            offset: 100
+        });
+
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    window.scrollTo({
+                        top: target.offsetTop - 70,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+
+        // Active navigation link highlighting
+        window.addEventListener('scroll', () => {
+            let current = '';
+            const sections = document.querySelectorAll('section');
+            const navLinks = document.querySelectorAll('.nav-link');
+
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop;
+                if (window.pageYOffset >= sectionTop - 100) {
+                    current = section.getAttribute('id');
+                }
+            });
+
+            navLinks.forEach(link => {
+                link.classList.remove('active');
+                if (link.getAttribute('href').substring(1) === current) {
+                    link.classList.add('active');
+                }
+            });
+        });
+
+        // Navbar background change on scroll
+        window.addEventListener('scroll', () => {
+            const navbar = document.querySelector('.navbar');
+            if (window.scrollY > 50) {
+                navbar.style.backgroundColor = 'rgba(18, 18, 18, 0.95)';
+                navbar.style.boxShadow = '0 2px 10px rgba(0, 0, 0, 0.3)';
+            } else {
+                navbar.style.backgroundColor = 'transparent';
+                navbar.style.boxShadow = 'none';
+            }
+        });
+
+        // Add loading animation to skill bars
+        const observerOptions = {
+            root: null,
+            rootMargin: '0px',
+            threshold: 0.5
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    const progressBars = entry.target.querySelectorAll('.progress-bar');
+                    progressBars.forEach(bar => {
+                        const width = bar.style.width;
+                        bar.style.width = '0';
+                        setTimeout(() => {
+                            bar.style.width = width;
+                            bar.style.transition = 'width 1s ease-in-out';
+                        }, 100);
+                    });
+                }
+            });
+        }, observerOptions);
+
+        const skillsSection = document.querySelector('#skills');
+        if (skillsSection) {
+            observer.observe(skillsSection);
+        }
+
+        // Add hover effect to project cards
+        document.querySelectorAll('.card').forEach(card => {
+            card.addEventListener('mouseenter', () => {
+                card.style.transform = 'translateY(-10px)';
+                card.style.transition = 'transform 0.3s ease';
+            });
+
+            card.addEventListener('mouseleave', () => {
+                card.style.transform = 'translateY(0)';
+            });
+        });
+
+        // Typing animation for hero section
+        function typeWriter(element, text, speed = 100) {
+            let i = 0;
+            element.innerHTML = '';
+            
+            function type() {
+                if (i < text.length) {
+                    element.innerHTML += text.charAt(i);
+                    i++;
+                    setTimeout(type, speed);
+                }
+            }
+            
+            type();
+        }
+
+        // Initialize typing animation
+        window.addEventListener('load', () => {
+            const heroTitle = document.querySelector('.hero-section h1');
+            const originalText = heroTitle.innerHTML;
+            typeWriter(heroTitle, originalText, 100);
+        });
+    </script>
+</body>
+</html>
